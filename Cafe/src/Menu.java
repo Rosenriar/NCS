@@ -20,14 +20,16 @@ public class Menu {
 		return this.alPrice.get(ndx);
 	}
 	//실행문 적지 않을것.
-	public Menu(){ 
+	public Menu(){  
 	 this.alMenu=new ArrayList<String>();
 	 this.alPrice=new ArrayList<Integer>();
 		
 	 //데이터 : 변수>파일>데이터베이스
 		File f = new File("C:\\Temp\\menu.txt");
+		
+		FileReader fr;
 		try {
-			FileReader fr = new FileReader(f);
+			 fr = new FileReader(f);
 			BufferedReader br = new BufferedReader(fr);
 			try {
 				String line=br.readLine();
@@ -40,8 +42,10 @@ public class Menu {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+			}
+			
 		}
 
 			   //this.alPriceremove(1);
@@ -49,7 +53,6 @@ public class Menu {
 		 
 		
 		 //초기화
-}
 	public void display() { //반환값이 없으므로 void
 		//read
 		for(int i=0; i<this.alMenu.size(); i++) {
