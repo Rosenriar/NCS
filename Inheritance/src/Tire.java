@@ -12,7 +12,7 @@ public class Tire {
       this.location = location;
    }
    
-   boolean roll() {
+   public boolean roll() {
       ++pastRotation;
       if(pastRotation < maxRotation) {
          System.out.println("Tire 남은 수명: "+(maxRotation - pastRotation)+"회");
@@ -21,6 +21,6 @@ public class Tire {
          System.out.println(this.location+" 타이어 펑크!");
          return false;   //   최대 회전수 초과
       }
-   }
-   
+}
+ 
 }
